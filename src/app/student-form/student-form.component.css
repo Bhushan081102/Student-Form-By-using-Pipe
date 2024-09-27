@@ -1,0 +1,106 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7fa; /* Light gray background for contrast */
+  color: #333; /* Dark text */
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  background-color: #ffffff; /* White background for the container */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+  padding: 30px; /* Padding around the content */
+  max-width: 600px; /* Max width for the container */
+  margin: auto; /* Center the container */
+}
+
+h2 {
+  color: #4a90e2; /* Blue heading */
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 26px; /* Increased font size */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Space between form groups */
+}
+
+label {
+  display: block;
+  margin-bottom: 5px; /* Space below labels */
+  font-weight: 600; /* Bold weight */
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  width: 100%; /* Full width for inputs */
+  padding: 12px; /* Padding inside inputs */
+  border: 2px solid #dcdcdc; /* Light grey border */
+  border-radius: 8px; /* Rounded corners */
+  transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus {
+  border-color: #4a90e2; /* Blue border on focus */
+  outline: none; /* Remove default outline */
+}
+
+input[type="radio"] {
+  margin-right: 5px; /* Space between radio buttons */
+}
+
+.btn {
+  background-color: #4a90e2; /* Blue button */
+  color: white; /* White text */
+  padding: 12px 20px; /* Padding for the button */
+  border: none; /* No border */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+  margin-right: 10px; /* Space between buttons */
+}
+
+.btn:hover {
+  background-color: #357ABD; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.table {
+  width: 100%; /* Full width for the table */
+  border-collapse: collapse; /* Collapse borders */
+  margin-top: 30px; /* Space above the table */
+}
+
+.table th,
+.table td {
+  border: 1px solid #dddddd; /* Light grey border */
+  text-align: left; /* Left-aligned text */
+  padding: 12px; /* Padding inside cells */
+}
+
+.table th {
+  background-color: #4a90e2; /* Blue header background */
+  color: white; /* White text in headers */
+}
+
+.table tbody tr {
+  transition: background-color 0.3s; /* Smooth transition for row */
+}
+
+.table tbody tr:hover {
+  background-color: #f1f1f1; /* Light grey on hover */
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #fafafa; /* Slightly lighter grey for even rows */
+}
+
+.text-danger {
+  color: #e74c3c; /* Red for error messages */
+  font-size: 14px; /* Slightly smaller font */
+}

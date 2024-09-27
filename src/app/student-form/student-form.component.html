@@ -1,0 +1,75 @@
+<div class="container">
+  <h2>Student Registration Form</h2>
+  <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Student Name:</label>
+      <input type="text" id="name" formControlName="name" class="form-control" />
+      <div *ngIf="studentForm.get('name')?.invalid && studentForm.get('name')?.touched" class="text-danger">
+        Name is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="birthdate">Birthdate:</label>
+      <input type="date" id="birthdate" formControlName="birthdate" class="form-control" [max]="maxBirthdate" />
+      <div *ngIf="studentForm.get('birthdate')?.invalid && studentForm.get('birthdate')?.touched" class="text-danger">
+        Birthdate is required and must be in the past.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Gender:</label>
+      <div>
+        <label>
+          <input type="radio" formControlName="gender" value="Male" /> Male
+        </label>
+        <label>
+          <input type="radio" formControlName="gender" value="Female" /> Female
+        </label>
+        <label>
+          <input type="radio" formControlName="gender" value="Other" /> Other
+        </label>
+        <div *ngIf="studentForm.get('gender')?.invalid && studentForm.get('gender')?.touched" class="text-danger">
+          Gender is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="batch">Batch:</label>
+      <input type="text" id="batch" formControlName="batch" class="form-control" />
+      <div *ngIf="studentForm.get('batch')?.invalid && studentForm.get('batch')?.touched" class="text-danger">
+        Batch is required.
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="studentForm.invalid">Submit</button>
+  </form>
+
+  <h2 class="mt-4">Submitted Students</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Birthdate</th>
+        <th>Batch</th>
+        <th>Actions</th> <!-- Added actions column for edit and delete buttons -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of submittedStudents; let i = index">
+        <td>{{ student.name | titlecase }}</td>
+        <td>{{ student.age }}</td>
+        <td>{{ student.gender }}</td>
+        <td>{{ student.birthdate }}</td>
+        <td>{{ student.batch | uppercase }}</td>
+        <td>
+          <button class="btn btn-warning" (click)="editStudent(i)">Edit</button> <!-- Edit button -->
+          <button class="btn btn-danger" (click)="deleteStudent(i)">Delete</button> <!-- Delete button -->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
